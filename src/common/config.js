@@ -1,0 +1,2 @@
+const PUBLIC_VAPID_KEY = "BFIs2dOMkwSPaFAzT1KCbzi-7VeGykN4x4mUBcgfTLCvC3GGU8sOdxPyWFNaE_XvTU2VoeCK7tWEiXH0Rnw6HG0"; // Replace with your public VAPID key
+const API_URL = "http://localhost:3000/notifications"; // Replace with your backend URL
