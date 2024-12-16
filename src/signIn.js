@@ -17,7 +17,7 @@ const SignIn = () => {
         const userData = { email, password };
 
         try {
-            const response = await axios.post('http://localhost:3000/user/signin', userData);
+            const response = await axios.post('https://q-buddy-backend-1.onrender.com/user/signin', userData);
 
             if (response.data.message === 'Login successful') {
                 setSuccess(response.data.message);
