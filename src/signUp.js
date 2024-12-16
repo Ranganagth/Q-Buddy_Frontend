@@ -33,7 +33,7 @@ const SignUp = () => {
     const userData = { name, email, password, contactNumber, role };
 
     try {
-      const response = await axios.post('http://localhost:3000/user/signup', userData, {
+      const response = await axios.post('https://q-buddy-backend-1.onrender.com/user/signup', userData, {
         headers: { 'Content-Type': 'application/json' },
       });
       setSuccess('User created successfully!');
