@@ -15,7 +15,8 @@ import {
     type SidebarFooterProps,
 } from '@toolpad/core/DashboardLayout';
 import { useDemoRouter } from '@toolpad/core/internal';
-import HomePage from '../home';
+import ServicesPage from './slider/services';
+import HomePage from '../pages/home';
 
 // Navigation items
 const NAVIGATION: Navigation = [
@@ -45,24 +46,25 @@ const demoTheme = createTheme({
 
 // Dynamic page content rendering
 function DemoPageContent({ pathname }: { pathname: string }) {
-    switch (pathname) {
-        case '/dashboard':
-            return <HomePage />;
-        default:
-            return (
-                <Box
-                    sx={{
-                        py: 4,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        textAlign: 'center',
-                    }}
-                >
-                    <HomePage />
-                </Box>
-            );
+    if (pathname === "/dashboard") {
+        return <HomePage />;
     }
+    if (pathname === "/services") {
+        return <ServicesPage />;
+    }
+    return (
+        <Box
+            sx={{
+                py: 4,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+            }}
+        >
+            <HomePage />
+        </Box>
+    );
 }
 
 // Toolbar with theme switcher
