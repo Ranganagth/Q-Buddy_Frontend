@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { TextField, Button, Select, Link, MenuItem, Grid, Typography, Box, Container } from '@mui/material';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { ENDPOINTS } from '../apiConfig';
+// import { ENDPOINTS } from '../apiConfig';
+// import api from '../utils/api.ts';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -19,7 +19,7 @@ const SignUp = () => {
     event.preventDefault();
 
     if (!role) {
-      setError("Please select a role");
+      setError('Please select a role');
       return;
     }
 
@@ -28,22 +28,15 @@ const SignUp = () => {
       return;
     }
 
-    setError('');
-    setSuccess('');
-
-    const userData = { name, email, password, contactNumber, role };
+    // const userData = { name, email, password, contactNumber, role };
 
     try {
-      const response = await axios.post(ENDPOINTS.SIGNUP, userData, {
-        headers: { 'Content-Type': 'application/json' },
-      });
+      // const response = await api.post(ENDPOINTS.SIGNUP, userData);
       setSuccess('User created successfully!');
-      setError('');
       navigate('/dashboard');
     } catch (err) {
-      console.error('Error:', err.response?.data || err.message);
       setError(err.response?.data?.message || 'Error creating user');
-      setSuccess('');
+      console.error('SignUp error', err);
     }
   };
 
@@ -51,7 +44,7 @@ const SignUp = () => {
   return (
     <Container component="main" maxWidth="xs">
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 2 }}>
-        <img style={{ height: "20vh", width: "60%" }} src="QB-Logos.png" />
+        <img style={{ height: "20vh", width: "60%" }} src="QB-Logos.png" alt="" />
         <Typography component="h1" variant="h5">
           Sign Up
         </Typography>

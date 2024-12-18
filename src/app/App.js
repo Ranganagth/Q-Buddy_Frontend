@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignIn from '../auth/signIn.js';
 import SignUp from '../auth/signUp.js';
 import HomePage from '../pages/home';
 import "leaflet/dist/leaflet.css";
-import DashboardLayoutSlots from '../components/DashboardLayoutSlots.tsx';
+import DashboardLayoutSlots from '../components/Dashboard/DashboardLayoutSlots.tsx';
 
 
 function App() {
